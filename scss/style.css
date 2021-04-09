@@ -82,7 +82,7 @@ img {
   width: 100vw;
 }
 
-.block.case-studies .row {
+.block.case-studies .top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,13 +92,22 @@ img {
   height: 100vh;
 }
 
-.block.case-studies .image {
+.block.case-studies .top-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
+}
+
+.block.case-studies .top-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .block.case-studies .overlay {
@@ -113,12 +122,19 @@ img {
   z-index: 10;
 }
 
-.block.case-studies img {
+.block.more-studies .row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+
+.block.more-studies .subheader {
+  color: #fff;
+  font-weight: lighter;
+  text-transform: uppercase;
+  background-color: #BEDE06;
+  text-align: right;
   width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
 }
 /*# sourceMappingURL=style.css.map */

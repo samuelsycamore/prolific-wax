@@ -74,18 +74,24 @@ img {
 	position: relative;
 	overflow: hidden;
 	width: 100vw;
-	.row {
+	.top {
 		display: flex;
 		align-items: flex-start;
 		height: 100vh;
 	}
-	.image {
+	.top-image {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
 		z-index: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
 	}
 	.overlay {
     color: $light;
@@ -96,11 +102,20 @@ img {
 		padding-left: 120px;
 		z-index: 10;
 	}
-	img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
-	}
+}
+
+.block.more-studies {
+  .row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+  .subheader {
+    color: $light;
+    font-weight: lighter;
+    text-transform: uppercase;
+    background-color: $green;
+    text-align: right;
+    width: 100%;
+  }
 }
 
