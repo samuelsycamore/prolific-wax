@@ -1,0 +1,22 @@
+{
+  "name": "wax",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o css/"
+    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelsycamore/prolific-wax.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuelsycamore/prolific-wax/issues"
+  },
+  "homepage": "https://github.com/samuelsycamore/prolific-wax#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

@@ -1,0 +1,124 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+}
+
+.block.hero {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.block.hero .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 100vh;
+}
+
+.block.hero .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.block.hero .content {
+  position: relative;
+  padding-bottom: 120px;
+  padding-left: 120px;
+  z-index: 10;
+}
+
+.block.hero .title {
+  color: #FFCE05;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.block.hero img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.block.services {
+  color: #fff;
+  background-color: #262626;
+  padding: 20px 50px;
+}
+
+.block.services .title {
+  text-transform: uppercase;
+}
+
+.block.services .services-info {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 2fr 2fr 1fr;
+      grid-template-columns: 2fr 2fr 2fr 1fr;
+  gap: 10px;
+}
+
+.block.case-studies {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.block.case-studies .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 100vh;
+}
+
+.block.case-studies .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.block.case-studies .overlay {
+  color: #fff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  position: relative;
+  padding-bottom: 10px;
+  padding-left: 120px;
+  z-index: 10;
+}
+
+.block.case-studies img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+/*# sourceMappingURL=style.css.map */

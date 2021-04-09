@@ -1,0 +1,106 @@
+$dark: #262626;
+$light: #fff;
+$yellow: #FFCE05;
+$green: #BEDE06;
+$blue: #47C4F2;
+$orange: #ED771A;
+$purp: #9D5994;
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.wrapper {
+	max-width: 1200px;
+	margin: auto;
+}
+
+img {
+	width: 100%;
+}
+
+.block.hero {
+	position: relative;
+	overflow: hidden;
+	width: 100vw;
+	.row {
+		display: flex;
+		align-items: flex-end;
+		height: 100vh;
+	}
+	.image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
+	.content {
+		position: relative;
+		padding-bottom: 120px;
+		padding-left: 120px;
+		z-index: 10;
+	}
+  .title {
+    color: $yellow;
+    text-transform: uppercase;
+    font-weight: lighter;
+  }
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+}
+
+.block.services {
+  color: $light;
+  background-color: $dark;
+  padding: 20px 50px;
+  .title {
+    text-transform: uppercase;
+  }
+  .services-info {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1fr;
+    gap: 10px;
+  }
+}
+
+.block.case-studies {
+	position: relative;
+	overflow: hidden;
+	width: 100vw;
+	.row {
+		display: flex;
+		align-items: flex-start;
+		height: 100vh;
+	}
+	.image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
+	.overlay {
+    color: $light;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+		position: relative;
+		padding-bottom: 10px;
+		padding-left: 120px;
+		z-index: 10;
+	}
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+}
+
