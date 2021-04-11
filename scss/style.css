@@ -113,6 +113,9 @@ body {
   max-width: 200px;
   padding: 1rem;
   margin: 100px auto 0 auto;
+}
+
+.block.services .flip-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,6 +126,15 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (min-width: 700px) {
+  .block.services .flip-flex {
+    -webkit-transform-origin: 10 0;
+            transform-origin: 10 0;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
 }
 
 .block.services .see-more {

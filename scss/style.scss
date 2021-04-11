@@ -70,7 +70,6 @@ body {
   .title {
     text-transform: uppercase;
     font-size: 2rem;
-
   }
   @media (min-width: 700px) {
     .services-info {
@@ -99,13 +98,20 @@ body {
     max-width: 200px;
     padding: 1rem;
     margin: 100px auto 0 auto;
+    
+  }
+  .flip-flex {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+  @media (min-width: 700px) {
+    .flip-flex {
+      transform-origin: 10 0;
+      transform: rotate(90deg);
+    }
+  }
   .see-more {
-    //transform-origin: 10 0;
-    //transform: rotate(90deg);
     text-transform: uppercase;
   }
 }
