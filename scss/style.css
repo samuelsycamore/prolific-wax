@@ -1,5 +1,6 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
 }
 
 .wrapper {
@@ -44,8 +45,14 @@ body {
   color: #ffce05;
   text-transform: uppercase;
   font-weight: lighter;
-  font-size: 4rem;
+  font-size: 2.5rem;
   line-height: 0.9em;
+}
+
+@media (min-width: 500px) {
+  .block.hero .title {
+    font-size: 4rem;
+  }
 }
 
 .block.hero img {
@@ -60,7 +67,7 @@ body {
 .block.services {
   color: #fff;
   background-color: #262626;
-  padding: 4rem 4rem;
+  padding: 4rem 1rem;
 }
 
 .block.services .services-header {
@@ -72,12 +79,14 @@ body {
   font-size: 2rem;
 }
 
-.block.services .services-info {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2fr 2fr 2fr 1fr;
-      grid-template-columns: 2fr 2fr 2fr 1fr;
-  gap: 10px;
+@media (min-width: 700px) {
+  .block.services .services-info {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 2fr 2fr 1fr;
+        grid-template-columns: 2fr 2fr 2fr 1fr;
+    gap: 10px;
+  }
 }
 
 .block.services h4 {
@@ -87,7 +96,7 @@ body {
 }
 
 .block.services h4.research {
-  color: #ed771a;
+  color: #ffce05;
 }
 
 .block.services h4.strategy {
@@ -144,17 +153,21 @@ body {
 .block.case-studies .overlay {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.5);
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 2fr;
-      grid-template-columns: 1fr 2fr;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 20vh;
   position: relative;
-  padding: 0.7rem 4rem;
+  padding: 0.7rem 1rem;
   z-index: 10;
+}
+
+@media (min-width: 500px) {
+  .block.case-studies .overlay {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2fr;
+        grid-template-columns: 1fr 2fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .block.case-studies .title {
