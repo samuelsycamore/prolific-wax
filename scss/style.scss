@@ -157,8 +157,11 @@ body {
   .case-name {
     color: white;
     position: relative;
-    bottom: 10;
-    left: 10;
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
     z-index: 10;
   }
 }
