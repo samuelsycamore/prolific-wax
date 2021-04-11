@@ -18,7 +18,6 @@ body {
 .block.hero {
   position: relative;
   overflow: hidden;
-  width: 100vw;
   .row {
     display: flex;
     align-items: flex-end;
@@ -104,7 +103,6 @@ body {
 .block.case-studies {
   position: relative;
   overflow: hidden;
-  width: 100vw;
   height: 100vh;
   .top {
     display: flex;
@@ -127,19 +125,25 @@ body {
   }
   .overlay {
     color: $light;
+    background-color: rgba(0,0,0,0.5);
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
     position: relative;
-    padding-bottom: 10px;
-    padding-left: 120px;
+    padding: 10px 120px;
     z-index: 10;
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .content {
+    text-transform: uppercase;
   }
 }
 
 .block.more-studies {
   position: relative;
   overflow: hidden;
-  width: 100vw;
   .subheader {
     color: $light;
     font-weight: lighter;

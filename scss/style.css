@@ -10,7 +10,6 @@ body {
 .block.hero {
   position: relative;
   overflow: hidden;
-  width: 100vw;
 }
 
 .block.hero .row {
@@ -121,7 +120,6 @@ body {
 .block.case-studies {
   position: relative;
   overflow: hidden;
-  width: 100vw;
   height: 100vh;
 }
 
@@ -155,20 +153,30 @@ body {
 
 .block.case-studies .overlay {
   color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 3fr;
-      grid-template-columns: 1fr 3fr;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
-  padding-bottom: 10px;
-  padding-left: 120px;
+  padding: 10px 120px;
   z-index: 10;
+}
+
+.block.case-studies .title {
+  font-size: 3rem;
+}
+
+.block.case-studies .content {
+  text-transform: uppercase;
 }
 
 .block.more-studies {
   position: relative;
   overflow: hidden;
-  width: 100vw;
 }
 
 .block.more-studies .subheader {
