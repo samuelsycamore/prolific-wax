@@ -210,25 +210,24 @@ body {
   z-index: 10;
 }
 
-.block.more-studies {
-  position: relative;
-  overflow: hidden;
-}
-
 .block.more-studies .subheader {
+  background-color: #bede06;
   color: #fff;
   font-weight: lighter;
   text-transform: uppercase;
-  background-color: #bede06;
   text-align: right;
-  width: 100%;
+  font-size: 3rem;
+  height: 50vh;
+  padding: 2rem;
 }
 
-.block.more-studies .row {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2fr 1fr 1fr 1fr;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
+@media (min-width: 500px) {
+  .block.more-studies .row {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
 }
 
 .block.more-studies .content {
@@ -250,6 +249,16 @@ body {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+.block.more-studies .hide-mobile {
+  display: none;
+}
+
+@media (min-width: 500px) {
+  .block.more-studies {
+    display: block;
+  }
 }
 
 .block.blog-teasers .teasers {

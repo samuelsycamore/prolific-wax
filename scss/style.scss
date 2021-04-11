@@ -98,7 +98,6 @@ body {
     max-width: 200px;
     padding: 1rem;
     margin: 100px auto 0 auto;
-    
   }
   .flip-flex {
     display: flex;
@@ -167,19 +166,21 @@ body {
 }
 
 .block.more-studies {
-  position: relative;
-  overflow: hidden;
   .subheader {
+    background-color: $green;
     color: $light;
     font-weight: lighter;
     text-transform: uppercase;
-    background-color: $green;
     text-align: right;
-    width: 100%;
+    font-size: 3rem;
+    height: 50vh;
+    padding: 2rem;
   }
-  .row {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+  @media (min-width: 500px) {
+    .row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
   }
   .content {
     position: relative;
@@ -193,6 +194,12 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
+  }
+  .hide-mobile {
+    display: none;
+  }
+  @media (min-width: 500px) {
+    display: block;
   }
 }
 
