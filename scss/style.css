@@ -221,7 +221,7 @@ body {
   padding: 2rem;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 700px) {
   .block.more-studies .row {
     display: -ms-grid;
     display: grid;
