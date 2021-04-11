@@ -173,7 +173,7 @@ body {
   z-index: 10;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 700px) {
   .block.case-studies .overlay {
     display: -ms-grid;
     display: grid;
@@ -210,6 +210,16 @@ body {
   z-index: 10;
 }
 
+.block.more-studies {
+  position: relative;
+  height: 40vh;
+  margin-bottom: 8rem;
+}
+
+.block.more-studies .row {
+  height: 40vh;
+}
+
 .block.more-studies .subheader {
   background-color: #bede06;
   color: #fff;
@@ -217,29 +227,18 @@ body {
   text-transform: uppercase;
   text-align: right;
   font-size: 3rem;
-  height: 50vh;
   padding: 2rem;
 }
 
-@media (min-width: 700px) {
-  .block.more-studies .row {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 2fr 1fr 1fr 1fr;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-  }
-}
-
 .block.more-studies .content {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-transform: uppercase;
   position: relative;
+  bottom: 50;
+  left: 0;
   z-index: 10;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  height: 10vh;
+  padding: 0.9rem;
 }
 
 .block.more-studies img {
@@ -255,20 +254,32 @@ body {
   display: none;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .block.more-studies .hide-mobile {
     display: block;
   }
+  .block.more-studies .row {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
 }
 
-.block.blog-teasers .teasers {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (25%)[3];
-      grid-template-columns: repeat(3, 25%);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.block.blog-teasers {
+  position: relative;
+}
+
+@media (min-width: 700px) {
+  .block.blog-teasers .teasers {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (25%)[3];
+        grid-template-columns: repeat(3, 25%);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .block.blog-teasers img {
@@ -281,6 +292,7 @@ body {
 }
 
 .block.logo-gallery {
+  position: relative;
   background-color: #262626;
   color: #fff;
 }

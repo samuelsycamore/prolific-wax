@@ -140,7 +140,7 @@ body {
     padding: 0.7rem 1rem;
     z-index: 10;
   }
-  @media (min-width: 500px) {
+  @media (min-width: 700px) {
     .overlay {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -166,6 +166,12 @@ body {
 }
 
 .block.more-studies {
+  position: relative;
+  height: 40vh;
+  margin-bottom: 8rem;
+  .row {
+    height: 40vh;
+  }
   .subheader {
     background-color: $green;
     color: $light;
@@ -173,21 +179,17 @@ body {
     text-transform: uppercase;
     text-align: right;
     font-size: 3rem;
-    height: 50vh;
     padding: 2rem;
   }
-  @media (min-width: 700px) {
-    .row {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-    }
-  }
   .content {
+    background-color: rgba(0,0,0,0.5);
+    color: $light;
+    text-transform: uppercase;
     position: relative;
+    bottom: 50;
+    left: 0;
     z-index: 10;
-    display: flex;
-    align-items: flex-end;
-    height: 10vh;
+    padding: 0.9rem;
   }
   img {
     width: 100%;
@@ -198,18 +200,26 @@ body {
   .hide-mobile {
     display: none;
   }
-  @media (min-width: 700px) {
+  @media (min-width: 900px) {
     .hide-mobile {
       display: block;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
     }
   }
 }
 
 .block.blog-teasers {
-  .teasers {
-    display: grid;
-    grid-template-columns: repeat(3, 25%);
-    justify-content: center;
+  position: relative;
+
+  @media (min-width: 700px) {
+    .teasers {
+      display: grid;
+      grid-template-columns: repeat(3, 25%);
+      justify-content: center;
+    }
   }
   img {
     width: 100%;
@@ -220,6 +230,7 @@ body {
 }
 
 .block.logo-gallery {
+  position: relative;
   background-color: $dark;
   color: $light;
   .title {
