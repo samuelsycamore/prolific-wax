@@ -110,19 +110,22 @@ body {
 .block.services .more-tab {
   background-color: rgba(0, 0, 0, 0.5);
   height: 150px;
+  max-width: 200px;
   padding: 1rem;
-  margin-top: 100px;
-}
-
-.block.services .chevron {
-  font-size: 3rem;
+  margin: 100px auto 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .block.services .see-more {
-  -webkit-transform-origin: 10 0;
-          transform-origin: 10 0;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
   text-transform: uppercase;
 }
 
@@ -176,6 +179,14 @@ body {
 
 .block.case-studies .content {
   text-transform: uppercase;
+}
+
+.block.case-studies .case-name {
+  color: white;
+  position: relative;
+  bottom: 10;
+  left: 10;
+  z-index: 10;
 }
 
 .block.more-studies {
