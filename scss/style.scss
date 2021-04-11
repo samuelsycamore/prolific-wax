@@ -199,7 +199,9 @@ body {
     display: none;
   }
   @media (min-width: 500px) {
-    display: block;
+    .hide-mobile {
+      display: block;
+    }
   }
 }
 
