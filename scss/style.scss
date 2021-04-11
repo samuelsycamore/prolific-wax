@@ -58,32 +58,17 @@ body {
   color: $light;
   background-color: $dark;
   padding: 4rem 4rem;
-  .row {
-    display: grid;
-    gap: 20px;
-    grid-template-areas:
-    "head"
-    "one"
-    "two"
-    "three"
-    "more";
-  }
   .services-header {
     max-width: 90ch;
-    grid-area: head;
   }
   .title {
     text-transform: uppercase;
     font-size: 2rem;
   }
-  .service-one {
-    grid-area: one;
-  }
-  .service-two {
-    grid-area: two;
-  }
-  .service-one {
-    grid-area: three;
+  .services-info {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1fr;
+    gap: 10px;
   }
   h4 {
     text-transform: uppercase;
@@ -103,17 +88,19 @@ body {
     background-color: rgba(0,0,0,0.5);
     height: 150px;
     padding: 1rem;
-    grid-area: more;
+    margin-top: 100px;
   }
   .chevron {
     font-size: 3rem;
   }
-  //.see-more {
-    //transform-origin: 10 0;
-    //transform: rotate(90deg);
-    //text-transform: uppercase;
-  //}
+  .see-more {
+    transform-origin: 10 0;
+    transform: rotate(90deg);
+    text-transform: uppercase;
+  }
 }
+
+
 
 .block.case-studies {
   position: relative;
@@ -135,7 +122,7 @@ body {
   }
   .overlay {
     color: $light;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;

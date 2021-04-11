@@ -63,18 +63,8 @@ body {
   padding: 4rem 4rem;
 }
 
-.block.services .row {
-  display: -ms-grid;
-  display: grid;
-  gap: 20px;
-      grid-template-areas: "head" "one" "two" "three" "more";
-}
-
 .block.services .services-header {
   max-width: 90ch;
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: head;
 }
 
 .block.services .title {
@@ -82,22 +72,12 @@ body {
   font-size: 2rem;
 }
 
-.block.services .service-one {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: one;
-}
-
-.block.services .service-two {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: two;
-}
-
-.block.services .service-one {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  grid-area: three;
+.block.services .services-info {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 2fr 2fr 1fr;
+      grid-template-columns: 2fr 2fr 2fr 1fr;
+  gap: 10px;
 }
 
 .block.services h4 {
@@ -122,13 +102,19 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   height: 150px;
   padding: 1rem;
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
-  grid-area: more;
+  margin-top: 100px;
 }
 
 .block.services .chevron {
   font-size: 3rem;
+}
+
+.block.services .see-more {
+  -webkit-transform-origin: 10 0;
+          transform-origin: 10 0;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  text-transform: uppercase;
 }
 
 .block.case-studies {
