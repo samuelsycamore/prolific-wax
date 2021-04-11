@@ -255,7 +255,7 @@ body {
   display: none;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 700px) {
   .block.more-studies .hide-mobile {
     display: block;
   }
