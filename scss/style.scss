@@ -1,3 +1,5 @@
+// GLOBAL
+
 $dark: #262626;
 $light: #fff;
 $yellow: #ffce05;
@@ -9,12 +11,52 @@ $purp: #9d5994;
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
+  padding: 0;
+  margin: 0;
 }
 
 .wrapper {
   max-width: 1200px;
   margin: auto;
 }
+
+footer {
+  background-color: $dark;
+  color: $light;
+  padding: 2rem;
+  .row {
+    margin: 0 auto;
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    @media screen and (max-width: 700px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .contact-info {
+    color: $green;
+  }
+  .social-icons {
+    display: flex;
+    span {
+      display: block;
+      padding: 0.1rem 1rem;
+    }
+  }
+  .contact-title {
+    text-transform: uppercase;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .privacy {
+    text-transform: uppercase;
+  }
+}
+
+// INDEX
 
 .block.hero {
   position: relative;
@@ -350,38 +392,70 @@ body {
   }
 }
 
-footer {
-  background-color: $dark;
-  color: $light;
-  padding: 2rem;
+// ABOUT
+
+
+// CASE STUDY
+
+
+// SERVICES
+
+
+// TESTIMONIALS
+
+.block.testimonial-hero {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
   .row {
-    margin: 0 auto;
-    display: grid;
-    justify-content: space-evenly;
-    align-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    @media screen and (max-width: 700px) {
-      grid-template-columns: 1fr;
-    }
-  }
-  .contact-info {
-    color: $green;
-  }
-  .social-icons {
     display: flex;
-    span {
-      display: block;
-      padding: 0.1rem 1rem;
+    align-items: flex-end;
+    height: 100vh;
+    width: 100vw;
+  }
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .content {
+    color: $light;
+    background-color: rgba($dark,0.5);
+    position: relative;
+    width: 100vw;
+    height: 30vh;
+    @media screen and (max-width: 700px) {
+      height: 50vh;
     }
   }
-  .contact-title {
-    text-transform: uppercase;
+  .testimonials-header {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+    align-items: center;
+    @media screen and (max-width: 700px) {
+      flex-direction: column;
+      gap: 1rem;
+    }
   }
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  .privacy {
+  .title {
     text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 3rem;
+    line-height: 0.9em;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 }
