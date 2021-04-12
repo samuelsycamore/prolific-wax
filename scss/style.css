@@ -316,8 +316,8 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  -o-object-fit: scale-down;
-     object-fit: scale-down;
+  -o-object-fit: contain;
+     object-fit: contain;
   -o-object-position: center;
      object-position: center;
 }
@@ -474,11 +474,15 @@ footer {
 }
 
 footer .row {
+  margin: 0 auto;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
 }
