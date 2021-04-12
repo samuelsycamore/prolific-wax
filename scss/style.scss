@@ -47,7 +47,7 @@ body {
     font-size: 4rem;
     line-height: 0.9em;
   }
-  @media (max-width: 500px) {
+  @media screen and (max-width: 500px) {
     .title {
       font-size: 2.5rem;
     }
@@ -76,7 +76,7 @@ body {
     grid-template-columns: 2fr 2fr 2fr 1fr;
     gap: 10px;
   }
-  @media (max-width: 700px) {
+  @media screen and (max-width: 700px) {
     .services-info {
       grid-template-columns: 1fr;
     }
@@ -109,7 +109,7 @@ body {
     transform-origin: 10 0;
     transform: rotate(90deg);
   }
-  @media (max-width: 700px) {
+  @media screen and (max-width: 700px) {
     .flip-flex {
       transform: none;
     }
@@ -147,7 +147,7 @@ body {
     grid-template-columns: 1fr 2fr;
     align-items: center;
   }
-  @media (max-width: 700px) {
+  @media screen and (max-width: 700px) {
     .overlay {
       grid-template-columns: 1fr;
     }
@@ -207,7 +207,7 @@ body {
   .hide-mobile {
     display: block;
   }
-  @media (max-width: 900px) {
+  @media screen and (max-width: 900px) {
     .hide-mobile {
       display: none;
     }
@@ -234,7 +234,7 @@ body {
     gap: 2rem;
     grid-template-columns: repeat(3, 25%);
     justify-content: center;
-    @media (max-width: 700px) {
+    @media screen and (max-width: 700px) {
       grid-template-columns: 1fr;
     }
   }
@@ -297,12 +297,12 @@ body {
     gap: 2rem;
     grid-template-columns: repeat(6, 1fr);
   }
-  @media (max-width: 900px) {
+  @media screen and (max-width: 900px) {
     .logo-box {
       grid-template-columns: repeat(3, 1fr);
     }
   }
-  @media (max-width: 500px) {
+  @media screen and (max-width: 500px) {
     .logo-box {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -311,16 +311,32 @@ body {
 
 .block.more-news {
   color: $light;
-  background-color: $green;
   .culture {
+    background-color: $green;
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    padding-bottom: 10px;
-    padding-left: 120px;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  .title {
+    font-size: 2.5rem;
+    font-weight: lighter;
+  }
+  .content {
+    text-transform: uppercase;
+    max-width: 500px;
   }
   .photos {
     display: grid;
-    grid-template-columns: repeat(3, 33%);
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 700px) {
+    .photos {
+      grid-template-columns: 1fr;
+    }
+    .culture {
+      grid-template-columns: 1fr;
+    }
   }
   img {
     width: 100%;
@@ -328,13 +344,42 @@ body {
     object-fit: cover;
     object-position: center;
   }
+  .news-blurb p {
+    z-index: 99;
+    color: $light;
+  }
 }
 
 footer {
   background-color: $dark;
   color: $light;
+  padding: 2rem;
   .row {
     display: grid;
-    grid-template-columns: repeat(3, 33%);
+    justify-content: space-evenly;
+    grid-template-columns: repeat(3, 1fr);
+    @media screen and (max-width: 700px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .contact-info {
+    color: $green;
+  }
+  .social-icons {
+    display: flex;
+    span {
+      display: block;
+      padding: 0.1rem 1rem;
+    }
+  }
+  .contact-title {
+    text-transform: uppercase;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .privacy {
+    text-transform: uppercase;
   }
 }
