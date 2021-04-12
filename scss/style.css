@@ -5,6 +5,11 @@ body {
   margin: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
 .wrapper {
   max-width: 1200px;
   margin: auto;
@@ -170,7 +175,7 @@ footer .privacy {
 }
 
 .block.services .more-tab {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   height: 150px;
   max-width: 200px;
   padding: 1rem;
@@ -231,7 +236,7 @@ footer .privacy {
 
 .block.case-studies .overlay {
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   position: relative;
   padding: 0.7rem 1rem;
   z-index: 10;
@@ -301,7 +306,7 @@ footer .privacy {
 }
 
 .block.more-studies .content {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   text-transform: uppercase;
   position: relative;
@@ -392,7 +397,7 @@ footer .privacy {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  background-color: rgba(71, 196, 242, 0.5);
+  background-color: rgba(71, 196, 242, 0.7);
   color: #fff;
   text-transform: uppercase;
   position: absolute;
@@ -414,7 +419,7 @@ footer .privacy {
   position: relative;
   background-color: #262626;
   color: #fff;
-  padding: 0.5rem;
+  padding: 0.7rem;
 }
 
 .block.logo-gallery .logo-header {
@@ -553,7 +558,7 @@ footer .privacy {
 
 .block.testimonial-hero .content {
   color: #fff;
-  background-color: rgba(38, 38, 38, 0.5);
+  background-color: rgba(38, 38, 38, 0.7);
   position: relative;
   width: 100vw;
   height: 30vh;
@@ -606,5 +611,51 @@ footer .privacy {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+.block.testimonial {
+  background-color: #fff;
+  color: #262626;
+}
+
+.block.testimonial .col {
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 600px;
+  gap: 0.5rem;
+  line-height: 1.8em;
+}
+
+.block.testimonial .name {
+  color: #bede06;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
+.block.testimonial .position {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.block.testimonial .quote {
+  font-size: 5rem;
+  color: #bede06;
+  padding: 2rem;
 }
 /*# sourceMappingURL=style.css.map */
