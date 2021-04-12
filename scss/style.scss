@@ -412,11 +412,28 @@ footer {
   color: $dark;
   background-color: $green;
   height: 100vh;
+  padding: 8rem;
+  font-weight: lighter;
+  .headline {
+    max-width: 8ch;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+  .services-about {
+    font-size: 2rem;
+  }
 }
 
 .block.service-box {
   .service-details {
     display: flex;
+    align-items: center;
+    .subheader {
+      font-size: 2rem;
+    }
+    .tags {
+      font-weight: bold;
+    }
     &.light {
       background-color: $light;
       color: $dark;

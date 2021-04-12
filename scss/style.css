@@ -538,12 +538,35 @@ footer .privacy {
   color: #262626;
   background-color: #bede06;
   height: 100vh;
+  padding: 8rem;
+  font-weight: lighter;
+}
+
+.block.services-hero .headline {
+  max-width: 8ch;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.block.services-hero .services-about {
+  font-size: 2rem;
 }
 
 .block.service-box .service-details {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.block.service-box .service-details .subheader {
+  font-size: 2rem;
+}
+
+.block.service-box .service-details .tags {
+  font-weight: bold;
 }
 
 .block.service-box .service-details.light {
