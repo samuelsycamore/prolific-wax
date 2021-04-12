@@ -15,7 +15,12 @@ body {
   margin: 0;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 0;
 }
@@ -399,12 +404,39 @@ footer {
 
 // ABOUT
 
-
 // CASE STUDY
-
 
 // SERVICES
 
+.block.services-hero {
+  color: $dark;
+  background-color: $green;
+  height: 100vh;
+}
+
+.block.service-box {
+  .service-details {
+    display: flex;
+    &.light {
+      background-color: $light;
+      color: $dark;
+    }
+    &.dark {
+      background-color: $dark;
+      color: $light;
+      flex-direction: row-reverse;
+    }
+    .content {
+      padding: 1rem;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}
 
 // TESTIMONIALS
 
@@ -429,7 +461,7 @@ footer {
   }
   .content {
     color: $light;
-    background-color: rgba($dark,0.7);
+    background-color: rgba($dark, 0.7);
     position: relative;
     width: 100vw;
     height: 30vh;
