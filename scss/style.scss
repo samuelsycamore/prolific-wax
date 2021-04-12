@@ -44,12 +44,12 @@ body {
     color: $yellow;
     text-transform: uppercase;
     font-weight: lighter;
-    font-size: 2.5rem;
+    font-size: 4rem;
     line-height: 0.9em;
   }
-  @media (min-width: 500px) {
+  @media (max-width: 500px) {
     .title {
-      font-size: 4rem;
+      font-size: 2.5rem;
     }
   }
   img {
@@ -71,11 +71,14 @@ body {
     text-transform: uppercase;
     font-size: 2rem;
   }
-  @media (min-width: 700px) {
+  .services-info {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 700px) {
     .services-info {
-      display: grid;
-      grid-template-columns: 2fr 2fr 2fr 1fr;
-      gap: 10px;
+      grid-template-columns: 1fr;
     }
   }
   h4 {
@@ -103,11 +106,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform-origin: 10 0;
+    transform: rotate(90deg);
   }
-  @media (min-width: 700px) {
+  @media (max-width: 700px) {
     .flip-flex {
-      transform-origin: 10 0;
-      transform: rotate(90deg);
+      transform: none;
     }
   }
   .see-more {
@@ -139,12 +143,13 @@ body {
     position: relative;
     padding: 0.7rem 1rem;
     z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
   }
-  @media (min-width: 700px) {
+  @media (max-width: 700px) {
     .overlay {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      align-items: center;
+      grid-template-columns: 1fr;
     }
   }
   .title {
@@ -168,9 +173,11 @@ body {
 .block.more-studies {
   position: relative;
   height: 40vh;
-  margin-bottom: 8rem;
+  margin-bottom: 5rem;
   .row {
     height: 40vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
   }
   .subheader {
     background-color: $green;
@@ -194,47 +201,73 @@ body {
   img {
     width: 100%;
     height: 100%;
-    object-fit: scale-down;
+    object-fit: cover;
     object-position: center;
   }
   .hide-mobile {
-    display: none;
+    display: block;
   }
-  @media (min-width: 900px) {
+  @media (max-width: 900px) {
     .hide-mobile {
-      display: block;
+      display: none;
     }
     .row {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
     }
   }
 }
 
 .block.blog-teasers {
   position: relative;
+  margin-bottom: 1rem;
+  .teasers-header {
+    padding: 2rem;
+  }
   .title {
     font-size: 2.5rem;
   }
   .content {
     max-width: 90ch;
   }
-  @media (min-width: 700px) {
-    .teasers {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(3, 25%);
-      justify-content: center;
+  .teasers {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 25%);
+    justify-content: center;
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
     }
   }
   img {
     width: 100%;
     height: 100%;
+    position: relative;
     object-fit: scale-down;
     object-position: center;
   }
+  .teaser-deets {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
   .headline {
+    display: flex;
+    align-items: flex-end;
+    background-color: rgba($blue, 0.5);
+    color: $light;
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     z-index: 50;
+  }
+  .more-news {
+    text-align: right;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-style: italic;
   }
 }
 
@@ -242,13 +275,37 @@ body {
   position: relative;
   background-color: $dark;
   color: $light;
+  padding: 0.5rem;
+  .logo-header {
+    padding: 1rem;
+  }
   .title {
     color: $green;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: lighter;
+  }
+  .logo-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
   }
   .logo-box {
     display: grid;
-    grid-template-columns: repeat(6, 15%);
-    grid-template-rows: repeat(3, 30%);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  @media (max-width: 900px) {
+    .logo-box {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 500px) {
+    .logo-box {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }
 
