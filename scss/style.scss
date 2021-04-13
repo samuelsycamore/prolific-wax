@@ -1,5 +1,17 @@
 // GLOBAL
 
+@mixin screen-protector($color, $opacity) {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $color;
+  z-index: 1;
+  opacity: $opacity;
+}
+
 $dark: #262626;
 $light: #fff;
 $yellow: #ffce05;
@@ -8,6 +20,16 @@ $blue: #47c4f2;
 $orange: #ed771a;
 $purp: #9d5994;
 
+.yellow {
+  color: $yellow;
+}
+.purp {
+  color: $purp;
+}
+.green {
+  color: $green;
+}
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
@@ -15,18 +37,7 @@ body {
   margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-}
-
 .wrapper {
-  max-width: 1200px;
   margin: auto;
 }
 
@@ -71,6 +82,9 @@ footer {
 .block.hero {
   position: relative;
   overflow: hidden;
+  &:before {
+    @include screen-protector($dark, 0.3);
+  }
   .row {
     display: flex;
     align-items: flex-end;
@@ -86,8 +100,6 @@ footer {
   }
   .content {
     position: relative;
-    padding-bottom: 120px;
-    padding-left: 10px;
     margin: 0 auto;
     z-index: 10;
     max-width: 800px;
@@ -110,42 +122,106 @@ footer {
     object-fit: cover;
     object-position: center;
   }
+
+  &.style-2 {
+    // ABOUT, TESTIMONIALS PAGES
+    .content {
+      color: $light;
+      background-color: rgba($dark, 0.7);
+      z-index: 99;
+      position: relative;
+      width: 100vw;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6rem;
+      @media screen and (max-width: 700px) {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+    .title {
+      color: $light;
+      text-transform: uppercase;
+      font-weight: lighter;
+      font-size: 3rem;
+      line-height: 0.9em;
+    }
+    .description {
+      width: 50%;
+      max-width: 70ch;
+    }
+  }
+  &.style-3 {
+    // CASE STUDY PAGE
+    .content {
+      color: $light;
+      background-color: rgba($purp, 0.7);
+      z-index: 99;
+      position: relative;
+      width: 100vw;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 2rem;
+      display: flex;
+      align-items: left;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .content > * {
+      margin: 0.5rem;
+      padding-left: 5rem;
+    }
+    @media screen and (max-width: 700px) {
+      .content > * {
+        padding-left: 0;
+      }
+    }
+    .title {
+      color: $light;
+      text-transform: none;
+      font-weight: lighter;
+      font-size: 3rem;
+      line-height: 0.9em;
+    }
+    .description {
+      max-width: 70ch;
+    }
+  }
 }
 
 .block.services {
   color: $light;
   background-color: $dark;
   padding: 4rem 1rem;
-  .services-header {
-    max-width: 90ch;
+  .row {
+    &.services-header {
+      max-width: 70ch;
+    }
+    &.services-info {
+      display: grid;
+      grid-template-columns: 2fr 2fr 2fr 1fr;
+      gap: 10px;
+    }
   }
+
   .title {
     text-transform: uppercase;
     font-size: 2rem;
   }
-  .services-info {
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr 1fr;
-    gap: 10px;
-  }
+
   @media screen and (max-width: 700px) {
     .services-info {
       grid-template-columns: 1fr;
     }
   }
-  h4 {
+  .title {
     text-transform: uppercase;
     font-size: 1.5rem;
     line-height: 0.1em;
-    &.research {
-      color: $yellow;
-    }
-    &.strategy {
-      color: $purp;
-    }
-    &.creative {
-      color: $green;
-    }
   }
   .more-tab {
     background-color: rgba(0, 0, 0, 0.7);
@@ -403,62 +479,9 @@ footer {
 }
 
 // ABOUT
-.block.about-hero {
-  position: relative;
-  overflow: hidden;
-  .row {
-    display: flex;
-    align-items: flex-end;
-    height: 100vh;
-    width: 100vw;
-  }
-  .image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-  .content {
-    color: $light;
-    background-color: rgba($dark, 0.7);
-    z-index: 99;
-    position: relative;
-    width: 100vw;
-    height: 30vh;
-    @media screen and (max-width: 700px) {
-      height: 50vh;
-    }
-  }
-  .about-header {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-    gap: 6rem;
-    align-items: center;
-    @media screen and (max-width: 700px) {
-      flex-direction: column;
-      gap: 1rem;
-    }
-  }
-  .title {
-    text-transform: uppercase;
-    font-weight: lighter;
-    font-size: 3rem;
-    line-height: 0.9em;
-  }
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-}
-.block.about-box {
-  .about-details {
+
+.block.checkerbox {
+  .details {
     display: flex;
     align-items: center;
     .subheader {
