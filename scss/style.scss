@@ -484,39 +484,54 @@ footer {
 }
 
 .block.more-news {
+  position: relative;
   color: $light;
-  .culture {
-    background-color: $green;
-    display: flex;
-    align-items: center;
-    padding: 1rem 2rem;
+  .row {
+    .col.culture {
+      background-color: $green;
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      @media screen and (max-width: 700px) {
+        flex-direction: column;
+      }
+      .title {
+        font-size: 2.5rem;
+        font-weight: lighter;
+        line-height: 1em;
+        width: 100%;
+      }
+      .content {
+        text-transform: uppercase;
+        max-width: 500px;
+      }
+    }
   }
-  .title {
-    font-size: 2.5rem;
-    font-weight: lighter;
-  }
-  .content {
-    text-transform: uppercase;
-    max-width: 500px;
-  }
-  .photos {
+  .row.photos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-  }
-  @media screen and (max-width: 700px) {
-    .photos {
-      flex-direction: column;
+    @media screen and (max-width: 700px) {
+      grid-template-columns: 1fr;
     }
-    .culture {
-      flex-direction: column;
+    .col.news-blurb {
+      .headline {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 99;
+        color: $light;
+        &:before {
+          @include screen-protector($blue, 0.4);
+        }
+      }
     }
-  }
-  img {
-    @include image-fill();
-  }
-  .news-blurb p {
-    z-index: 99;
-    color: $light;
+    img {
+      position: relative;
+      z-index: 0;
+      @include image-fill();
+    }
   }
 }
 

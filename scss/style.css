@@ -626,10 +626,11 @@ footer .privacy {
 }
 
 .block.more-news {
+  position: relative;
   color: #fff;
 }
 
-.block.more-news .culture {
+.block.more-news .row .col.culture {
   background-color: #bede06;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -640,17 +641,28 @@ footer .privacy {
   padding: 1rem 2rem;
 }
 
-.block.more-news .title {
-  font-size: 2.5rem;
-  font-weight: lighter;
+@media screen and (max-width: 700px) {
+  .block.more-news .row .col.culture {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
-.block.more-news .content {
+.block.more-news .row .col.culture .title {
+  font-size: 2.5rem;
+  font-weight: lighter;
+  line-height: 1em;
+  width: 100%;
+}
+
+.block.more-news .row .col.culture .content {
   text-transform: uppercase;
   max-width: 500px;
 }
 
-.block.more-news .photos {
+.block.more-news .row.photos {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -658,32 +670,43 @@ footer .privacy {
 }
 
 @media screen and (max-width: 700px) {
-  .block.more-news .photos {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .block.more-news .culture {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .block.more-news .row.photos {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 
-.block.more-news img {
+.block.more-news .row.photos .col.news-blurb .headline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  color: #fff;
+}
+
+.block.more-news .row.photos .col.news-blurb .headline:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #47c4f2;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.block.more-news .row.photos img {
+  position: relative;
+  z-index: 0;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-}
-
-.block.more-news .news-blurb p {
-  z-index: 99;
-  color: #fff;
 }
 
 .block.checkerbox .details {
