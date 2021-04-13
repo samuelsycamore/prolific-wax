@@ -24,7 +24,7 @@ h4,
 h5,
 h6,
 p {
-  margin: 1rem auto;
+  margin: 0;
   padding: 0;
   line-height: 3em;
 }
@@ -736,6 +736,13 @@ footer .privacy {
   color: #fff;
 }
 
+.block.checkerbox .details.dark.reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
 .block.checkerbox .details .content {
   padding: 1rem;
 }
@@ -753,146 +760,32 @@ footer .privacy {
   color: #262626;
   background-color: #bede06;
   height: 100vh;
-  padding: 8rem;
   font-weight: lighter;
 }
 
-.block.services-hero .headline {
+.block.services-hero .row {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.block.services-hero .row .col .headline {
   max-width: 8ch;
   font-size: 3rem;
-  text-transform: uppercase;
-}
-
-.block.services-hero .services-about {
-  font-size: 2rem;
-}
-
-.block.service-box .service-details {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.block.service-box .service-details .subheader {
-  font-size: 2rem;
-}
-
-.block.service-box .service-details .tags {
-  font-weight: bold;
-}
-
-.block.service-box .service-details.light {
-  background-color: #fff;
-  color: #262626;
-}
-
-.block.service-box .service-details.dark {
-  background-color: #262626;
-  color: #fff;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-}
-
-.block.service-box .service-details .content {
-  padding: 1rem;
-}
-
-.block.service-box .service-details img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-}
-
-.block.testimonial-hero {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100vh;
-}
-
-.block.testimonial-hero .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  height: 100vh;
-  width: 100vw;
-}
-
-.block.testimonial-hero .image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.block.testimonial-hero .content {
-  color: #fff;
-  background-color: rgba(38, 38, 38, 0.7);
-  position: relative;
-  width: 100vw;
-  height: 30vh;
-}
-
-@media screen and (max-width: 700px) {
-  .block.testimonial-hero .content {
-    height: 50vh;
-  }
-}
-
-.block.testimonial-hero .testimonials-header {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
-  z-index: 10;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 6rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media screen and (max-width: 700px) {
-  .block.testimonial-hero .testimonials-header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 1rem;
-  }
-}
-
-.block.testimonial-hero .title {
+  line-height: 1em;
   text-transform: uppercase;
   font-weight: lighter;
-  font-size: 3rem;
-  line-height: 1em;
+  padding: 2rem 0;
 }
 
-.block.testimonial-hero img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+.block.services-hero .row .col .services-about {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .block.services-hero .row .col .services-about {
+    font-size: 1.3rem;
+  }
 }
 
 .block.testimonial {
@@ -900,7 +793,7 @@ footer .privacy {
   color: #262626;
 }
 
-.block.testimonial .col {
+.block.testimonial .row .col {
   margin: 0 auto;
   padding: 1rem;
   width: 100vw;
@@ -922,21 +815,21 @@ footer .privacy {
   gap: 0.5rem;
 }
 
-.block.testimonial .name {
+.block.testimonial .row .col .name {
   color: #bede06;
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: lighter;
-  line-height: 0.5em;
+  line-height: 2em;
 }
 
-.block.testimonial .position {
+.block.testimonial .row .col .position {
   font-weight: bold;
   font-size: 0.8rem;
-  line-height: 0.1em;
+  line-height: 1em;
 }
 
-.block.testimonial .quote {
+.block.testimonial .row .col .quote {
   font-size: 5rem;
   color: #bede06;
   padding: 2rem;
