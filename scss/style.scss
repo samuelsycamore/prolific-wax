@@ -12,6 +12,13 @@
   opacity: $opacity;
 }
 
+@mixin image-fill() {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 $dark: #262626;
 $light: #fff;
 $yellow: #ffce05;
@@ -20,8 +27,8 @@ $blue: #47c4f2;
 $orange: #ed771a;
 $purp: #9d5994;
 
-.yellow {
-  color: $yellow;
+.orange {
+  color: $orange;
 }
 .purp {
   color: $purp;
@@ -37,8 +44,137 @@ body {
   margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 1rem auto;
+  padding: 0;
+  line-height: 3em;
+}
+
+p {
+  line-height: 1.8em;
+}
+
 .wrapper {
   margin: auto;
+}
+
+.block.hero {
+  position: relative;
+  overflow: hidden;
+  &:before {
+    @include screen-protector($dark, 0.3);
+  }
+  .row {
+    display: flex;
+    align-items: flex-end;
+    height: 100vh;
+    .col.image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      img {
+        @include image-fill();
+      }
+    }
+    .col.content {
+      position: relative;
+      margin: 0 auto;
+      z-index: 10;
+      max-width: 800px;
+      .title {
+        color: $yellow;
+        text-transform: uppercase;
+        font-weight: lighter;
+        font-size: 4rem;
+        line-height: 1em;
+      }
+      @media screen and (max-width: 500px) {
+        .title {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+
+  &.style-2 {
+    // ABOUT, TESTIMONIALS PAGES
+    .row {
+      .col.content {
+        color: $light;
+        background-color: rgba($dark, 0.7);
+        z-index: 99;
+        position: relative;
+        width: 100vw;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6rem;
+        @media screen and (max-width: 700px) {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .title {
+          color: $light;
+          text-transform: uppercase;
+          font-weight: lighter;
+          font-size: 3rem;
+          line-height: 1em;
+        }
+        .description {
+          width: 50%;
+          max-width: 70ch;
+        }
+      }
+    }
+  }
+  &.style-3 {
+    // CASE STUDY PAGE
+    .row {
+      .col.content {
+        color: $light;
+        background-color: rgba($purp, 0.7);
+        z-index: 99;
+        position: relative;
+        width: 100vw;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 2rem;
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        gap: 1rem;
+        .title {
+          color: $light;
+          text-transform: none;
+          font-weight: lighter;
+          font-size: 3rem;
+          line-height: 1em;
+        }
+        .description {
+          max-width: 70ch;
+        }
+      }
+      .col.content > * {
+        margin: 0.5rem;
+        padding-left: 5rem;
+        @media screen and (max-width: 700px) {
+          padding-left: 0;
+        }
+      }
+    }
+  }
 }
 
 footer {
@@ -79,120 +215,6 @@ footer {
 
 // INDEX
 
-.block.hero {
-  position: relative;
-  overflow: hidden;
-  &:before {
-    @include screen-protector($dark, 0.3);
-  }
-  .row {
-    display: flex;
-    align-items: flex-end;
-    height: 100vh;
-  }
-  .image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-  .content {
-    position: relative;
-    margin: 0 auto;
-    z-index: 10;
-    max-width: 800px;
-  }
-  .title {
-    color: $yellow;
-    text-transform: uppercase;
-    font-weight: lighter;
-    font-size: 4rem;
-    line-height: 0.9em;
-  }
-  @media screen and (max-width: 500px) {
-    .title {
-      font-size: 2.5rem;
-    }
-  }
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  &.style-2 {
-    // ABOUT, TESTIMONIALS PAGES
-    .content {
-      color: $light;
-      background-color: rgba($dark, 0.7);
-      z-index: 99;
-      position: relative;
-      width: 100vw;
-      max-width: 100%;
-      margin: 0 auto;
-      padding: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 6rem;
-      @media screen and (max-width: 700px) {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
-    .title {
-      color: $light;
-      text-transform: uppercase;
-      font-weight: lighter;
-      font-size: 3rem;
-      line-height: 0.9em;
-    }
-    .description {
-      width: 50%;
-      max-width: 70ch;
-    }
-  }
-  &.style-3 {
-    // CASE STUDY PAGE
-    .content {
-      color: $light;
-      background-color: rgba($purp, 0.7);
-      z-index: 99;
-      position: relative;
-      width: 100vw;
-      max-width: 100%;
-      margin: 0 auto;
-      padding: 2rem;
-      display: flex;
-      align-items: left;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .content > * {
-      margin: 0.5rem;
-      padding-left: 5rem;
-    }
-    @media screen and (max-width: 700px) {
-      .content > * {
-        padding-left: 0;
-      }
-    }
-    .title {
-      color: $light;
-      text-transform: none;
-      font-weight: lighter;
-      font-size: 3rem;
-      line-height: 0.9em;
-    }
-    .description {
-      max-width: 70ch;
-    }
-  }
-}
-
 .block.services {
   color: $light;
   background-color: $dark;
@@ -202,48 +224,41 @@ footer {
       max-width: 70ch;
     }
     &.services-info {
-      display: grid;
-      grid-template-columns: 2fr 2fr 2fr 1fr;
-      gap: 10px;
+      display: flex;
+      gap: 1rem;
+      @media screen and (max-width: 900px) {
+        flex-direction: column;
+      }
+      .col {
+        .title {
+          text-transform: uppercase;
+          font-size: 1.5rem;
+          line-height: 1em;
+        }
+      }
+      .col.more-tab {
+        background-color: rgba(0, 0, 0, 0.7);
+        height: 150px;
+        width: 150px;
+        padding: 1rem;
+        margin: 100px auto 0 auto;
+      }
+      .flip-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform-origin: 10 0;
+        transform: rotate(90deg);
+      }
+      @media screen and (max-width: 900px) {
+        .flip-flex {
+          transform: none;
+        }
+      }
+      .see-more {
+        text-transform: uppercase;
+      }
     }
-  }
-
-  .title {
-    text-transform: uppercase;
-    font-size: 2rem;
-  }
-
-  @media screen and (max-width: 700px) {
-    .services-info {
-      grid-template-columns: 1fr;
-    }
-  }
-  .title {
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    line-height: 0.1em;
-  }
-  .more-tab {
-    background-color: rgba(0, 0, 0, 0.7);
-    height: 150px;
-    max-width: 200px;
-    padding: 1rem;
-    margin: 100px auto 0 auto;
-  }
-  .flip-flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform-origin: 10 0;
-    transform: rotate(90deg);
-  }
-  @media screen and (max-width: 700px) {
-    .flip-flex {
-      transform: none;
-    }
-  }
-  .see-more {
-    text-transform: uppercase;
   }
 }
 
@@ -251,50 +266,56 @@ footer {
   position: relative;
   overflow: hidden;
   height: 70vh;
-  .top-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    img {
+  .row {
+    .col.image {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center;
+      z-index: 0;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
     }
-  }
-  .overlay {
-    color: $light;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: relative;
-    padding: 0.7rem 1rem;
-    z-index: 10;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-  }
-  @media screen and (max-width: 700px) {
-    .overlay {
-      grid-template-columns: 1fr;
+    .col.overlay {
+      color: $light;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: relative;
+      padding: 0.7rem 1rem;
+      z-index: 10;
+      gap: 2rem;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
     }
-  }
-  .title {
-    font-size: 3rem;
-  }
-  .content {
-    text-transform: uppercase;
-  }
-  .case-name {
-    color: white;
-    position: relative;
-    width: 90%;
-    height: 80%;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    z-index: 10;
+    @media screen and (max-width: 700px) {
+      .overlay {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+    .title {
+      font-size: 3rem;
+      line-height: 1em;
+    }
+    .content {
+      text-transform: uppercase;
+      max-width: 70ch;
+    }
+    .case-name {
+      color: white;
+      position: relative;
+      width: 90%;
+      height: 80%;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      z-index: 10;
+    }
   }
 }
 
@@ -327,10 +348,7 @@ footer {
     padding: 0.9rem;
   }
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    @include image-fill();
   }
   .hide-mobile {
     display: block;
@@ -367,11 +385,8 @@ footer {
     }
   }
   img {
-    width: 100%;
-    height: 100%;
     position: relative;
-    object-fit: contain;
-    object-position: center;
+    @include image-fill();
   }
   .teaser-deets {
     position: relative;
@@ -467,10 +482,7 @@ footer {
     }
   }
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    @include image-fill();
   }
   .news-blurb p {
     z-index: 99;
@@ -502,10 +514,7 @@ footer {
       padding: 1rem;
     }
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
+      @include image-fill();
     }
   }
 }
@@ -552,10 +561,7 @@ footer {
       padding: 1rem;
     }
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
+      @include image-fill();
     }
   }
 }
@@ -609,13 +615,10 @@ footer {
     text-transform: uppercase;
     font-weight: lighter;
     font-size: 3rem;
-    line-height: 0.9em;
+    line-height: 1em;
   }
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    @include image-fill();
   }
 }
 
@@ -633,17 +636,18 @@ footer {
     align-items: center;
     max-width: 600px;
     gap: 0.5rem;
-    line-height: 1.8em;
   }
   .name {
     color: $green;
     text-transform: uppercase;
     font-size: 1.5rem;
     font-weight: lighter;
+    line-height: 0.5em;
   }
   .position {
     font-weight: bold;
     font-size: 0.8rem;
+    line-height: 0.1em;
   }
   .quote {
     font-size: 5rem;
