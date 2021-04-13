@@ -396,40 +396,51 @@ footer .privacy {
 
 .block.more-studies {
   position: relative;
-  height: 40vh;
-  margin-bottom: 5rem;
 }
 
 .block.more-studies .row {
   height: 40vh;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2fr 1fr 1fr 1fr;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.block.more-studies .subheader {
+@media screen and (max-width: 900px) {
+  .block.more-studies .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.block.more-studies .row .col.subheader {
   background-color: #bede06;
+  padding: 2rem;
+  min-height: 30vh;
+  min-width: 350px;
+}
+
+.block.more-studies .row .col.subheader .title {
   color: #fff;
   font-weight: lighter;
   text-transform: uppercase;
   text-align: right;
   font-size: 3rem;
-  padding: 2rem;
+  line-height: 1em;
 }
 
-.block.more-studies .content {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  text-transform: uppercase;
-  position: relative;
-  bottom: 50;
-  left: 0;
-  z-index: 10;
-  padding: 0.9rem;
+.block.more-studies .row .col.hide-mobile {
+  display: block;
 }
 
-.block.more-studies img {
+@media screen and (max-width: 900px) {
+  .block.more-studies .row .col.hide-mobile {
+    display: none;
+  }
+}
+
+.block.more-studies .row .col.hide-mobile img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -438,18 +449,15 @@ footer .privacy {
      object-position: center;
 }
 
-.block.more-studies .hide-mobile {
-  display: block;
-}
-
-@media screen and (max-width: 900px) {
-  .block.more-studies .hide-mobile {
-    display: none;
-  }
-  .block.more-studies .row {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-  }
+.block.more-studies .row .col.hide-mobile .content {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  bottom: 50;
+  left: 0;
+  z-index: 10;
+  padding: 0.9rem;
 }
 
 .block.blog-teasers {
