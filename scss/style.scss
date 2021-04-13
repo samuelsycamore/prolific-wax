@@ -538,7 +538,6 @@ footer {
 // ABOUT & SERVICES
 
 .block.checkerbox {
-
   .details {
     display: flex;
     align-items: flex-end;
@@ -593,7 +592,6 @@ footer {
 }
 
 .block.rainbow-box {
-
   .row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -623,7 +621,6 @@ footer {
 }
 
 .block.people {
-
   .row {
     display: grid;
     gap: 4rem;
@@ -642,7 +639,8 @@ footer {
       }
       .content {
         margin: 0 auto;
-        .name, .position {
+        .name,
+        .position {
           text-align: center;
           padding: 0;
           line-height: 1em;
@@ -715,6 +713,74 @@ footer {
         color: $green;
         padding: 2rem;
       }
+    }
+  }
+}
+
+// CASE STUDY
+
+.block.mega-grid {
+  .row {
+    .col {
+      display: grid;
+      padding: 1rem;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 200px);
+      grid-template-areas:
+        "one   two   three three"
+        "eight eight nine  four"
+        "eight eight ten   four"
+        "seven seven six   five";
+      @media screen and (max-width: 900px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(8, 400px);
+        grid-template-areas:
+          "one   two"
+          "three three"
+          "eight eight"
+          "eight eight"
+          "nine  four"
+          "ten   four"
+          "seven seven"
+          "six   five";
+      }
+      @media screen and (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+      }
+      .one {
+        grid-area: one;
+      }
+      .two {
+        grid-area: two;
+      }
+      .three {
+        grid-area: three;
+      }
+      .four {
+        grid-area: four;
+      }
+      .five {
+        grid-area: five;
+      }
+      .six {
+        grid-area: six;
+      }
+      .seven {
+        grid-area: seven;
+      }
+      .eight {
+        grid-area: eight;
+      }
+      .nine {
+        grid-area: nine;
+      }
+      .ten {
+        grid-area: ten;
+      }
+    }
+    .col > * {
+      border: 2px solid red;
     }
   }
 }

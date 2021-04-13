@@ -865,7 +865,8 @@ footer .privacy {
   margin: 0 auto;
 }
 
-.block.people .row .col.person .content .name, .block.people .row .col.person .content .position {
+.block.people .row .col.person .content .name,
+.block.people .row .col.person .content .position {
   text-align: center;
   padding: 0;
   line-height: 1em;
@@ -948,5 +949,107 @@ footer .privacy {
   font-size: 5rem;
   color: #bede06;
   padding: 2rem;
+}
+
+.block.mega-grid .row .col {
+  display: -ms-grid;
+  display: grid;
+  padding: 1rem;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (200px)[4];
+      grid-template-rows: repeat(4, 200px);
+      grid-template-areas: "one   two   three three" "eight eight nine  four" "eight eight ten   four" "seven seven six   five";
+}
+
+@media screen and (max-width: 900px) {
+  .block.mega-grid .row .col {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (400px)[8];
+        grid-template-rows: repeat(8, 400px);
+        grid-template-areas: "one   two" "three three" "eight eight" "eight eight" "nine  four" "ten   four" "seven seven" "six   five";
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .block.mega-grid .row .col {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.block.mega-grid .row .col .one {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: one;
+}
+
+.block.mega-grid .row .col .two {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: two;
+}
+
+.block.mega-grid .row .col .three {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: three;
+}
+
+.block.mega-grid .row .col .four {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: four;
+}
+
+.block.mega-grid .row .col .five {
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
+  grid-area: five;
+}
+
+.block.mega-grid .row .col .six {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: six;
+}
+
+.block.mega-grid .row .col .seven {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: seven;
+}
+
+.block.mega-grid .row .col .eight {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: eight;
+}
+
+.block.mega-grid .row .col .nine {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: nine;
+}
+
+.block.mega-grid .row .col .ten {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: ten;
+}
+
+.block.mega-grid .row .col > * {
+  border: 2px solid red;
 }
 /*# sourceMappingURL=style.css.map */
