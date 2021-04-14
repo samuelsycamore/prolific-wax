@@ -723,26 +723,25 @@ footer {
   .row {
     .col {
       display: grid;
-      padding: 1rem;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(4, 200px);
       grid-template-areas:
         "one   two   three three"
-        "eight eight nine  four"
-        "eight eight ten   four"
-        "seven seven six   five";
+        "four  four  five  seven"
+        "four  four  six   seven"
+        "eight eight nine  ten";
       @media screen and (max-width: 900px) {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(8, 400px);
         grid-template-areas:
           "one   two"
           "three three"
+          "four  four"
+          "four  four"
+          "five  seven"
+          "six   seven"
           "eight eight"
-          "eight eight"
-          "nine  four"
-          "ten   four"
-          "seven seven"
-          "six   five";
+          "nine  ten";
       }
       @media screen and (max-width: 700px) {
         display: flex;

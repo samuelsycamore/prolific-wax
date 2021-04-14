@@ -954,12 +954,11 @@ footer .privacy {
 .block.mega-grid .row .col {
   display: -ms-grid;
   display: grid;
-  padding: 1rem;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   -ms-grid-rows: (200px)[4];
       grid-template-rows: repeat(4, 200px);
-      grid-template-areas: "one   two   three three" "eight eight nine  four" "eight eight ten   four" "seven seven six   five";
+      grid-template-areas: "one   two   three three" "four  four  five  seven" "four  four  six   seven" "eight eight nine  ten";
 }
 
 @media screen and (max-width: 900px) {
@@ -968,7 +967,7 @@ footer .privacy {
         grid-template-columns: repeat(2, 1fr);
     -ms-grid-rows: (400px)[8];
         grid-template-rows: repeat(8, 400px);
-        grid-template-areas: "one   two" "three three" "eight eight" "eight eight" "nine  four" "ten   four" "seven seven" "six   five";
+        grid-template-areas: "one   two" "three three" "four  four" "four  four" "five  seven" "six   seven" "eight eight" "nine  ten";
   }
 }
 
@@ -1006,46 +1005,46 @@ footer .privacy {
 .block.mega-grid .row .col .four {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
-  -ms-grid-column: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: four;
 }
 
 .block.mega-grid .row .col .five {
-  -ms-grid-row: 4;
-  -ms-grid-column: 4;
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
   grid-area: five;
 }
 
 .block.mega-grid .row .col .six {
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 3;
   grid-area: six;
 }
 
 .block.mega-grid .row .col .seven {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
   grid-area: seven;
 }
 
 .block.mega-grid .row .col .eight {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: eight;
 }
 
 .block.mega-grid .row .col .nine {
-  -ms-grid-row: 2;
+  -ms-grid-row: 4;
   -ms-grid-column: 3;
   grid-area: nine;
 }
 
 .block.mega-grid .row .col .ten {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
   grid-area: ten;
 }
 
